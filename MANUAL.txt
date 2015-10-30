@@ -1,0 +1,100 @@
+// ============================================================================
+MultiSourceAcquisition (MSA)
+
+System for simultaneous acquisition of multiple modalities of data streams.
+Currently supported devices:
+Kinect 2, 2xPS3Eye cameras, accelerometer glove.
+
+Copyright (c) 2015 Filip Malawski 
+fmal@agh.edu.pl
+AGH University of Science and Technology, Cracow, Poland
+
+MultiSourceAcquisition (MSA) is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+MultiSourceAcquisition (MSA) is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+// ================================================================== Requirements
+- Windows 8 or higher 
+Required for Kinect 2. Should you decide to modify app to work without Kinect 2 it will not need W8 anymore.
+- .NET Framework 4.5
+- Kinect 2 drivers & SDK
+http://www.microsoft.com/en-us/download/details.aspx?id=44561
+- CL Eye Platform Driver & SDK (only if you wish to use the PS3Eye cameras)
+https://codelaboratories.com/products/eye/
+Please note, that this is NOT a free library
+- Other libs are provided and include:
+(appropriate license files can be found with the provided addresses)
+csmatio	(http://sourceforge.net/projects/csmatio/)
+zlib.net (http://zlib.net/)
+AForge.NET (http://www.aforgenet.com/)
+FFMPEG (https://www.ffmpeg.org/)
+MoreLinq (https://code.google.com/p/morelinq/)
+
+Note: Using accelerometers is optional. Currently supported accelerometer glove is a custom system, but you can easily modify the code to use other accelerometers. In this case you need to use proper drivers for your devices.
+If you're not using accelerometers at all the application will work fine without any additional drivers.
+
+
+// ================================================================== How to run
+From source code: build the solution and run
+From executable: run MultiSourceAcqMain.exe
+
+
+// ================================================================== Interface
+The graphical interface is divided into 3 sections:
+
+Presentation section (on the left) 
+- Displays output from all devices
+
+Control section (in the middle):
+- Device-specific settings (PS3Eye, Acc glove)
+- Start/stop - here you need to select the devices and start them
+Acc glove is started separately
+Depth and color mapping for Kinect are selected here as well
+- Display settings - you can change what is displayed
+Important: displaying performance hides 'quick action panel'
+- Recorder settings
+Choose path
+Enter action and person name
+Select codec and bitrate
+Start & stop recording sample
+Counter increments automatically
+Remove last recording if needed
+ 
+Performance/Quick action section:
+- Displays full performance (if Display Performance is checked) or
+- Displays Quick action panel and most important performance indices
+Click an item on the list to copy it as current action in the Recording settings section
+
+
+// ================================================================== Quick start (Kinect 2)
+How to quickly record Kinect 2 samples
+- Install Kinect 2 drivers and SDK, connect Kinect 2
+- Start the application
+- In the Start/Stop section select 'Kinect 2', optionally set depth and/or color mapping
+- Press 'Start devices' button, video from Kinect 2 should appear on the left
+- Set all recording settings (path, action and person name, codec, bitrate)
+- Press 'Start recording' buttton, perform some action in front of the Kinect 2, press 'Stop recording'
+- Go to the chosen path, verify that the data has been recorded correctly
+
+
+// ================================================================== Settings & Quick action panel
+All settings should be self-explanatory ;)
+Settings are saved in 'settings' file, in the main application directory. 
+Settings are saved when application is closed or 'Save settings' button is pressed.
+
+Quick action panel reads lists from quick_action directory located in the main application directory.
+The quick_action directory is automatically created if it doesn't already exist.
+Each list of actions is stored as a single txt file, where each line is one action on the list.
+To modify a list simply modfy corresponding txt file.
+To add or remove a list simply add or remove a txt file.
+

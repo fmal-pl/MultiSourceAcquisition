@@ -1,0 +1,25 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Common="clr-namespace:WiTKoM.Common;assembly=WiTKoM.Common" x:Class="MultiSourceAcqMain.PS3Eye.PS3EyePanel" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="235">
+    <Grid>
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="85,0,0,0" Name="cboResolution" VerticalAlignment="Top" Width="150" SelectionChanged="cboResolution_SelectionChanged" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="85,29,0,0" Name="cboFramerate" VerticalAlignment="Top" Width="150" SelectionChanged="cboFramerate_SelectionChanged" />
+        <Label Content="Resolution" Height="28" HorizontalAlignment="Left" Margin="12,0,0,0" Name="lResolution" VerticalAlignment="Top" VerticalContentAlignment="Center" />
+        <Label Content="Framerate" Height="28" HorizontalAlignment="Left" Margin="15,29,0,0" Name="lFramerate" VerticalAlignment="Top" VerticalContentAlignment="Center" />
+        <Label Content="Exposure" Height="28" HorizontalAlignment="Left" Margin="20,63,0,0" Name="lExp" VerticalAlignment="Top" VerticalContentAlignment="Bottom" />
+        <Common:ValueSlider HorizontalAlignment="Left" Margin="85,68,0,0" Name="vsExp" VerticalAlignment="Top" Width="150" ValueOrAutoChanged="vsExp_Changed" Maximum="511" Value="256" Height="42" />
+        <Label Content="Gain" Height="28" HorizontalAlignment="Left" Margin="44,122,0,0" Name="lGain" VerticalAlignment="Top" VerticalContentAlignment="Bottom" />
+        <Common:ValueSlider HorizontalAlignment="Left" Margin="85,127,0,0" Maximum="79" Name="vsGain" Value="40" VerticalAlignment="Top" Width="150" ValueOrAutoChanged="vsGain_Changed" Height="42" />
+        <Common:ValueTripleSlider HorizontalAlignment="Left" Margin="85,185,0,0" Name="vsWhiteBalance" VerticalAlignment="Top" Width="150" Value1="128" Maximum="255" Value2="128" Value3="128" ValueOrAutoChanged="vsWhiteBalance_ValueOrAutoChanged" Height="125" />
+        <Label  Height="28" Margin="4,180,0,0" Name="lWhite" VerticalAlignment="Top" VerticalContentAlignment="Bottom" Content="White " HorizontalContentAlignment="Right" HorizontalAlignment="Left" Width="54" />
+        <Label  Height="28" HorizontalAlignment="Left" Margin="4,196,0,0" Name="lBalance" VerticalAlignment="Top" VerticalContentAlignment="Bottom" Content="Balance " HorizontalContentAlignment="Right" Width="54" />
+        <Label Content="R" Height="28" HorizontalAlignment="Left" Margin="62,180,0,0" Name="lR" VerticalAlignment="Top" VerticalContentAlignment="Bottom" />
+        <Label Content="G" Height="28" HorizontalAlignment="Left" Margin="62,207,0,0" Name="lG" VerticalAlignment="Top" VerticalContentAlignment="Bottom" />
+        <Label Content="B" Height="28" HorizontalAlignment="Left" Margin="63,234,0,0" Name="lB" VerticalAlignment="Top" VerticalContentAlignment="Bottom" />
+    </Grid>
+</UserControl>

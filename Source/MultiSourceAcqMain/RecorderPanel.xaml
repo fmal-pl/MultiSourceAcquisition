@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="MultiSourceAcqMain.RecorderPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="190" d:DesignWidth="250">
+    <Grid>
+        <Label Content="Path" Height="28" HorizontalAlignment="Right" Margin="0,0,157,0" Name="label1" VerticalAlignment="Top" FlowDirection="RightToLeft" />
+        <TextBox Height="23" HorizontalAlignment="Right" Margin="0" Name="tbPath" VerticalAlignment="Top" Width="151" TextChanged="tbPath_TextChanged" />
+        <Button Content="..." Height="23" HorizontalAlignment="Right" Margin="0,24,0,0" Name="bChooseDir" VerticalAlignment="Top" Width="29" Click="bChooseDir_Click" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,115,0,0" Name="cboCodecs" VerticalAlignment="Top" Width="151" SelectionChanged="cboCodecs_SelectionChanged" />
+        <Label Content="Codec" Height="28" HorizontalAlignment="Right" Margin="0,114,157,0" Name="label2" VerticalAlignment="Top" FlowDirection="RightToLeft" />
+        <TextBox Height="23" Margin="0,53,0,0" Name="tbConcept" VerticalAlignment="Top" HorizontalAlignment="Right" Width="151" Text="test" TextChanged="tbConcept_TextChanged" />
+        <Label Content="Action" Height="28" HorizontalAlignment="Right" Margin="0,51,157,0" Name="label3" VerticalAlignment="Top" Width="57" FlowDirection="RightToLeft" />
+        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,82,0,0" Name="tbPerson" VerticalAlignment="Top" Width="151" Text="test" TextChanged="tbPerson_TextChanged" />
+        <Label Content="Person" FlowDirection="RightToLeft" Height="28" HorizontalAlignment="Right" Margin="0,80,157,0" Name="label4" VerticalAlignment="Top" Width="57" />
+        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,143,0,0" x:Name="tbBitrate" VerticalAlignment="Top" Width="151" Text="90000" TextChanged="tbBitrate_TextChanged" />
+        <Label Content="Bitrate (kb/s)" Height="28" HorizontalAlignment="Right" Margin="0,139,153,0" x:Name="label4_Copy" VerticalAlignment="Top" Width="79" />
+    </Grid>
+</UserControl>
